@@ -10,16 +10,16 @@ void function_rotr(stack_t **hd, __attribute__((unused)) unsigned int indx)
 	stack_t *copy;
 
 	copy = *hd;
-	if (*hd == NULL || (*hd)function_ == NULL)
+	if (*hd == NULL || (*hd)->next_ == NULL)
 	{
 		return;
 	}
-	while (copyfunction_)
+	while (copy->next_)
 	{
-		copy = copyfunction_;
+		copy = copy->next_;
 	}
-	copyfunction_ = *hd;
-	copy->_prevfunction_ = NULL;
+	copy->next_ = *hd;
+	copy->_prev->next_ = NULL;
 	copy->_prev = NULL;
 	(*hd)->_prev = copy;
 	(*hd) = copy;

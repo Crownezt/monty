@@ -18,6 +18,6 @@ void function_pop(stack_t **hd, unsigned int indx)
 		exit(EXIT_FAILURE);
 	}
 	h = *hd;
-	*hd = hfunction_;
+	*hd = h->next_;
 	free(h);
 }

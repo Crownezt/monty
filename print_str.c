@@ -19,7 +19,7 @@ void function_pstr(stack_t **hd, unsigned int indx)
 			break;
 		}
 		printf("%c", h->n);
-		h = hfunction_;
+		h = h->next_;
 	}
 	printf("\n");
 }

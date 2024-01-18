@@ -13,7 +13,7 @@ void function_add(stack_t **hd, unsigned int indx)
 	h = *hd;
 	while (h)
 	{
-		h = hfunction_;
+		h = h->next_;
 		len++;
 	}
 	if (len < 2)
@@ -25,8 +25,8 @@ void function_add(stack_t **hd, unsigned int indx)
 		exit(EXIT_FAILURE);
 	}
 	h = *hd;
-	aux = h->n + hfunction_->n;
-	hfunction_->n = aux;
-	*hd = hfunction_;
+	aux = h->n + h->next_->n;
+	h->next_->n = aux;
+	*hd = h->next_;
 	free(h);
 }

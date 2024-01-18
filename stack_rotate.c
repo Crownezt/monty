@@ -9,18 +9,18 @@ void function_rotl(stack_t **hd,  __attribute__((unused)) unsigned int indx)
 {
 	stack_t *tmp = *hd, *aux;
 
-	if (*hd == NULL || (*hd)function_ == NULL)
+	if (*hd == NULL || (*hd)->next_ == NULL)
 	{
 		return;
 	}
-	aux = (*hd)function_;
+	aux = (*hd)->next_;
 	aux->_prev = NULL;
-	while (tmpfunction_ != NULL)
+	while (tmp->next_ != NULL)
 	{
-		tmp = tmpfunction_;
+		tmp = tmp->next_;
 	}
-	tmpfunction_ = *hd;
-	(*hd)function_ = NULL;
+	tmp->next_ = *hd;
+	(*hd)->next_ = NULL;
 	(*hd)->_prev = tmp;
 	(*hd) = aux;
 }

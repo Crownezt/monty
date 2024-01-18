@@ -12,7 +12,7 @@ void function_sub(stack_t **hd, unsigned int indx)
 
 	aux = *hd;
 	for (nodes = 0; aux != NULL; nodes++)
-		aux = auxfunction_;
+		aux = aux->next_;
 	if (nodes < 2)
 	{
 		fprintf(stderr, "L%d: can't sub, stack too short\n", indx);
@@ -22,8 +22,8 @@ void function_sub(stack_t **hd, unsigned int indx)
 		exit(EXIT_FAILURE);
 	}
 	aux = *hd;
-	sus = auxfunction_->n - aux->n;
-	auxfunction_->n = sus;
-	*hd = auxfunction_;
+	sus = aux->next_->n - aux->n;
+	aux->next_->n = sus;
+	*hd = aux->next_;
 	free(aux);
 }

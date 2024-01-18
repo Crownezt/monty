@@ -18,7 +18,7 @@ void addnode(stack_t **hd, int n)
 	if (aux)
 		aux->_prev = new_node;
 	new_node->n = n;
-	new_nodefunction_ = *hd;
+	new_node->next_ = *hd;
 	new_node->_prev = NULL;
 	*hd = new_node;
 }

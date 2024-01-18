@@ -14,7 +14,7 @@ void function_mod(stack_t **hd, unsigned int indx)
 	h = *hd;
 	while (h)
 	{
-		h = hfunction_;
+		h = h->next_;
 		len++;
 	}
 	if (len < 2)
@@ -34,8 +34,8 @@ void function_mod(stack_t **hd, unsigned int indx)
 		free_stack(*hd);
 		exit(EXIT_FAILURE);
 	}
-	aux = hfunction_->n % h->n;
-	hfunction_->n = aux;
-	*hd = hfunction_;
+	aux = h->next_->n % h->n;
+	h->next_->n = aux;
+	*hd = h->next_;
 	free(h);
 }

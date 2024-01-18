@@ -16,6 +16,6 @@ void function_pall(stack_t **hd, unsigned int indx)
 	while (h)
 	{
 		printf("%d\n", h->n);
-		h = hfunction_;
+		h = h->next_;
 	}
 }

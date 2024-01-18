@@ -29,11 +29,11 @@ void addqueue(stack_t **hd, int n)
 		printf("Error\n");
 	}
 	new_node->n = n;
-	new_nodefunction_ = NULL;
+	new_node->next_ = NULL;
 	if (aux)
 	{
-		while (auxfunction_)
-			aux = auxfunction_;
+		while (aux->next_)
+			aux = aux->next_;
 	}
 	if (!aux)
 	{
@@ -42,7 +42,7 @@ void addqueue(stack_t **hd, int n)
 	}
 	else
 	{
-		auxfunction_ = new_node;
+		aux->next_ = new_node;
 		new_node->_prev = aux;
 	}
 }

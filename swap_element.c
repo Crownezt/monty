@@ -13,7 +13,7 @@ void function_swap(stack_t **hd, unsigned int indx)
 	h = *hd;
 	while (h)
 	{
-		h = hfunction_;
+		h = h->next_;
 		len++;
 	}
 	if (len < 2)
@@ -26,6 +26,6 @@ void function_swap(stack_t **hd, unsigned int indx)
 	}
 	h = *hd;
 	aux = h->n;
-	h->n = hfunction_->n;
-	hfunction_->n = aux;
+	h->n = h->next_->n;
+	h->next_->n = aux;
 }
